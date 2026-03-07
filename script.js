@@ -1,4 +1,76 @@
 // ========================================
+// Daily Theme Switcher (7 themes, changes every 24h)
+// ========================================
+const themes = [
+    { name: 'sunday',    label: 'Sunday — Indigo & Cyan' },
+    { name: 'monday',    label: 'Monday — Emerald & Teal' },
+    { name: 'tuesday',   label: 'Tuesday — Rose & Pink' },
+    { name: 'wednesday', label: 'Wednesday — Amber & Orange' },
+    { name: 'thursday',  label: 'Thursday — Violet & Purple' },
+    { name: 'friday',    label: 'Friday — Sky & Blue' },
+    { name: 'saturday',  label: 'Saturday — Slate & Steel' }
+];
+
+function getDayTheme() {
+    return themes[new Date().getDay()];
+}
+
+function applyTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    const themeLabel = document.getElementById('themeLabel');
+    const theme = themes.find(t => t.name === themeName);
+    if (themeLabel && theme) {
+        themeLabel.textContent = theme.label;
+    }
+    // Update active state on picker buttons
+    document.querySelectorAll('.theme-picker-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === themeName);
+    });
+}
+
+// Apply today's theme on load
+const todayTheme = getDayTheme();
+applyTheme(todayTheme.name);
+
+// Theme indicator toggle
+const themeIndicator = document.getElementById('themeIndicator');
+const themePicker = document.getElementById('themePicker');
+
+if (themeIndicator && themePicker) {
+    themeIndicator.addEventListener('click', () => {
+        themePicker.classList.toggle('open');
+    });
+
+    // Close picker when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!themeIndicator.contains(e.target) && !themePicker.contains(e.target)) {
+            themePicker.classList.remove('open');
+        }
+    });
+
+    // Theme picker buttons — preview any theme
+    themePicker.querySelectorAll('.theme-picker-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyTheme(btn.dataset.theme);
+        });
+    });
+}
+
+// Auto-switch at midnight
+function msUntilMidnight() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    return midnight - now;
+}
+
+setTimeout(() => {
+    applyTheme(getDayTheme().name);
+    // Then check every 24 hours
+    setInterval(() => applyTheme(getDayTheme().name), 24 * 60 * 60 * 1000);
+}, msUntilMidnight());
+
+// ========================================
 // Typewriter Effect
 // ========================================
 const typewriterTexts = [
