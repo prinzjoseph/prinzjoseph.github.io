@@ -2,6 +2,7 @@
    CSS Variables & Reset
    ======================================== */
 :root {
+    /* Default theme (Indigo Cyan - Sunday) */
     --primary: #6366f1;
     --primary-light: #818cf8;
     --primary-dark: #4f46e5;
@@ -27,6 +28,264 @@
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ========================================
+   Daily Color Themes (7 days)
+   ======================================== */
+
+/* Sunday - Indigo & Cyan (default) */
+[data-theme="sunday"] {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --accent: #06b6d4;
+    --accent-light: #22d3ee;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #334155;
+    --border: #334155;
+    --gradient-1: linear-gradient(135deg, #6366f1, #06b6d4);
+    --gradient-2: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+/* Monday - Emerald & Teal */
+[data-theme="monday"] {
+    --primary: #10b981;
+    --primary-light: #34d399;
+    --primary-dark: #059669;
+    --accent: #14b8a6;
+    --accent-light: #2dd4bf;
+    --bg-dark: #0c1a14;
+    --bg-card: #162b22;
+    --bg-card-hover: #1f3d30;
+    --border: #1f3d30;
+    --gradient-1: linear-gradient(135deg, #10b981, #14b8a6);
+    --gradient-2: linear-gradient(135deg, #10b981, #06b6d4);
+}
+
+/* Tuesday - Rose & Pink */
+[data-theme="tuesday"] {
+    --primary: #f43f5e;
+    --primary-light: #fb7185;
+    --primary-dark: #e11d48;
+    --accent: #ec4899;
+    --accent-light: #f472b6;
+    --bg-dark: #1a0c12;
+    --bg-card: #2b1620;
+    --bg-card-hover: #3d1f2e;
+    --border: #3d1f2e;
+    --gradient-1: linear-gradient(135deg, #f43f5e, #ec4899);
+    --gradient-2: linear-gradient(135deg, #f43f5e, #a855f7);
+}
+
+/* Wednesday - Amber & Orange */
+[data-theme="wednesday"] {
+    --primary: #f59e0b;
+    --primary-light: #fbbf24;
+    --primary-dark: #d97706;
+    --accent: #f97316;
+    --accent-light: #fb923c;
+    --bg-dark: #1a150c;
+    --bg-card: #2b2216;
+    --bg-card-hover: #3d311f;
+    --border: #3d311f;
+    --gradient-1: linear-gradient(135deg, #f59e0b, #f97316);
+    --gradient-2: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+/* Thursday - Violet & Purple */
+[data-theme="thursday"] {
+    --primary: #8b5cf6;
+    --primary-light: #a78bfa;
+    --primary-dark: #7c3aed;
+    --accent: #a855f7;
+    --accent-light: #c084fc;
+    --bg-dark: #130f1e;
+    --bg-card: #221a33;
+    --bg-card-hover: #312647;
+    --border: #312647;
+    --gradient-1: linear-gradient(135deg, #8b5cf6, #a855f7);
+    --gradient-2: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+/* Friday - Sky & Blue */
+[data-theme="friday"] {
+    --primary: #0ea5e9;
+    --primary-light: #38bdf8;
+    --primary-dark: #0284c7;
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --bg-dark: #0c1520;
+    --bg-card: #162233;
+    --bg-card-hover: #1f3147;
+    --border: #1f3147;
+    --gradient-1: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    --gradient-2: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+}
+
+/* Saturday - Slate & Steel */
+[data-theme="saturday"] {
+    --primary: #64748b;
+    --primary-light: #94a3b8;
+    --primary-dark: #475569;
+    --accent: #78716c;
+    --accent-light: #a8a29e;
+    --bg-dark: #111113;
+    --bg-card: #1c1c1f;
+    --bg-card-hover: #2a2a2e;
+    --border: #2a2a2e;
+    --gradient-1: linear-gradient(135deg, #64748b, #78716c);
+    --gradient-2: linear-gradient(135deg, #64748b, #94a3b8);
+}
+
+/* Theme transition for smooth color changes */
+body, .navbar, .stat-card, .skill-category, .timeline-content,
+.project-card, .contact-card, .hero-social a, .status-badge,
+.btn-secondary, .nav-links a {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* ========================================
+   Theme Indicator Badge
+   ======================================== */
+.theme-indicator {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-indicator:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gradient-1);
+    flex-shrink: 0;
+}
+
+.theme-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+}
+
+.theme-indicator .theme-dots {
+    display: none;
+    gap: 6px;
+    padding-top: 8px;
+}
+
+.theme-indicator.expanded .theme-dots {
+    display: flex;
+}
+
+/* Theme picker popup */
+.theme-picker {
+    position: fixed;
+    bottom: 76px;
+    right: 24px;
+    z-index: 999;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-xl);
+    display: none;
+    animation: fadeInUp 0.3s ease;
+}
+
+.theme-picker.open {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.theme-picker-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-family: var(--font-mono);
+}
+
+.theme-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.theme-picker-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-picker-btn:hover {
+    transform: scale(1.15);
+}
+
+.theme-picker-btn.active {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.theme-picker-btn span {
+    font-size: 0.6rem;
+    color: white;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.theme-picker-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.theme-picker-day {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-family: var(--font-mono);
+}
+
+.theme-picker-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+    text-align: center;
+    font-style: italic;
 }
 
 *, *::before, *::after {
