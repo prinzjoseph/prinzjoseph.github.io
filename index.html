@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Joseph | DevOps Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">{</span> PJ <span class="logo-bracket">}</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Prince Joseph</h1>
+                <div class="hero-typewriter">
+                    <span class="typewriter-prefix">$ </span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    DevOps Engineer at <strong>Allianz Technology</strong> with expertise in cloud infrastructure, 
+                    CI/CD pipelines, container orchestration, and infrastructure as code.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/prinzjoseph" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/princejoseph94" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/princejoseph94" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:princejoseph1k94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="https://avatars.githubusercontent.com/u/16304603?v=4" alt="Prince Joseph" loading="eager">
+                    <div class="image-border"></div>
+                </div>
+                <div class="status-badge">
+                    <span class="status-dot"></span> Available for opportunities
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate <strong>DevOps Engineer</strong> based in <strong>Kerala, India</strong>, 
+                        currently working at <strong>Allianz Technology</strong>. I specialize in building and 
+                        maintaining robust cloud infrastructure, automating deployment pipelines, and ensuring 
+                        high availability of production systems.
+                    </p>
+                    <p>
+                        With hands-on experience across the full DevOps toolchain — from infrastructure provisioning 
+                        with Terraform and AWS CDK, to containerization with Docker and Kubernetes, to CI/CD with 
+                        Jenkins and GitHub Actions — I help teams ship faster and more reliably.
+                    </p>
+                    <p>
+                        I believe in infrastructure as code, automation-first thinking, and continuous improvement. 
+                        When I'm not automating things, you'll find me exploring new cloud-native technologies.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud Native</h3>
+                        <p>AWS infrastructure design & management</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                        <h3>CI/CD</h3>
+                        <p>Automated pipelines & deployments</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-cubes"></i></div>
+                        <h3>Containers</h3>
+                        <p>Docker & Kubernetes orchestration</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Reliability</h3>
+                        <p>Monitoring, alerting & incident response</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Platform</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">EC2</span>
+                        <span class="skill-tag">S3</span>
+                        <span class="skill-tag">EKS</span>
+                        <span class="skill-tag">CloudWatch</span>
+                        <span class="skill-tag">IAM</span>
+                        <span class="skill-tag">CDK</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fab fa-linux"></i>
+                        <h3>Operating Systems</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">RedHat Linux 8.x/9.x</span>
+                        <span class="skill-tag">Ubuntu 24.04</span>
+                        <span class="skill-tag">CentOS 8.x/9.x</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Scripting Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Groovy</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Infrastructure as Code</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">AWS CDK (TypeScript)</span>
+                        <span class="skill-tag">cdk8s</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Configuration Management</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ansible</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-rocket"></i>
+                        <h3>CI/CD</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fab fa-docker"></i>
+                        <h3>Containerization</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Dockerfile</span>
+                        <span class="skill-tag">Docker Compose</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-dharmachakra"></i>
+                        <h3>Container Orchestration</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">EKS</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">ArgoCD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Monitoring & Observability</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS CloudWatch</span>
+                        <span class="skill-tag">Dynatrace</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <i class="fab fa-git-alt"></i>
+                        <h3>Version Control</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>DevOps Engineer</h3>
+                            <span class="timeline-company">Allianz Technology</span>
+                        </div>
+                        <span class="timeline-date">Present</span>
+                        <ul class="timeline-details">
+                            <li>Design and manage cloud infrastructure on AWS for enterprise-grade applications</li>
+                            <li>Build and maintain CI/CD pipelines using Jenkins and GitHub Actions</li>
+                            <li>Containerize applications with Docker and orchestrate with Kubernetes (EKS)</li>
+                            <li>Implement Infrastructure as Code using Terraform and AWS CDK (TypeScript)</li>
+                            <li>Automate configuration management with Ansible</li>
+                            <li>Set up monitoring and alerting using AWS CloudWatch and Dynatrace</li>
+                            <li>Manage Linux servers (RHEL, Ubuntu, CentOS) in production environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-wordpress"></i></div>
+                    <h3>WordPress Ansible</h3>
+                    <p>Automated WordPress installation and configuration using Ansible playbooks for consistent, repeatable deployments.</p>
+                    <div class="project-tags">
+                        <span>Ansible</span>
+                        <span>Jinja</span>
+                        <span>WordPress</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/wordpress-ansible" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-database"></i></div>
+                    <h3>Azure PSQL Backup to Blob</h3>
+                    <p>Shell script to automate PostgreSQL database backups and upload them to Azure Blob Storage for disaster recovery.</p>
+                    <div class="project-tags">
+                        <span>Shell</span>
+                        <span>Azure</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/upload_azure_psql_backup_to_blob" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>CSF IP Deny Script</h3>
+                    <p>Linux shell script to bulk-deny IP addresses in CSF (ConfigServer Security & Firewall) for enhanced server security.</p>
+                    <div class="project-tags">
+                        <span>Shell</span>
+                        <span>Linux</span>
+                        <span>Security</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/deny-ip-in-csf" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-archive"></i></div>
+                    <h3>Website Backup & Restore</h3>
+                    <p>Comprehensive backup and restore script for website files and databases with automated scheduling support.</p>
+                    <div class="project-tags">
+                        <span>Shell</span>
+                        <span>Backup</span>
+                        <span>Automation</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/Website_Backup_and_restore_script" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-docker"></i></div>
+                    <h3>Dockerfiles</h3>
+                    <p>Collection of optimized Dockerfiles for various application stacks and development environments.</p>
+                    <div class="project-tags">
+                        <span>Docker</span>
+                        <span>Containers</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/dockerfiles" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-node-js"></i></div>
+                    <h3>Node React App</h3>
+                    <p>Full-stack application built with Node.js backend and React frontend, demonstrating modern web development practices.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>React</span>
+                    </div>
+                    <a href="https://github.com/prinzjoseph/node-react" target="_blank" rel="noopener" class="project-link">
+                        <i class="fab fa-github"></i> View Source
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">
+                I'm always open to discussing new opportunities, interesting projects, or just having a chat 
+                about DevOps and cloud technologies. Feel free to reach out!
+            </p>
+            <div class="contact-grid">
+                <a href="mailto:princejoseph1k94@gmail.com" class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <p>princejoseph1k94@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/princejoseph94" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>princejoseph94</p>
+                </a>
+                <a href="https://github.com/prinzjoseph" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <p>prinzjoseph</p>
+                </a>
+                <a href="https://www.instagram.com/princejoseph94" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                    <h3>Instagram</h3>
+                    <p>princejoseph94</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-logo">
+                    <span class="logo-bracket">{</span> Prince Joseph <span class="logo-bracket">}</span>
+                </p>
+                <p class="footer-text">Designed & Built by Prince Joseph</p>
+                <p class="footer-copyright">&copy; 2026 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
