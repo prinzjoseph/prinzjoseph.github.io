@@ -1278,7 +1278,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ── Tablet ── */
 @media (max-width: 900px) {
     .hero-container { grid-template-columns: 1fr; gap: 32px; }
-    .hero-terminal-wrap { order: -1; }
     .terminal-window { max-width: 100%; }
     .terminal-body { min-height: 240px; }
     .about-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -1300,14 +1299,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
         align-items: flex-start;
         padding: 16px 24px 24px;
         gap: 2px;
+        max-height: calc(100vh - var(--nav-h));
+        overflow-y: auto;
         transform: translateY(-110%);
         transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
         z-index: 999;
     }
+    .nav-links li { width: 100%; }
     .nav-links.open { transform: translateY(0); }
-    .nav-links li a { padding: 10px 8px; font-size: 0.9rem; }
-    .nav-resume-btn { margin-left: 0 !important; margin-top: 6px; }
+    .nav-links li a { padding: 10px 8px; font-size: 0.9rem; display: block; }
+    .nav-resume-btn { margin-left: 0 !important; margin-top: 6px; display: inline-block; }
     .nav-toggle { display: flex; }
+
+    .hero-content { order: 1; }
+    .hero-terminal-wrap { order: 2; }
 
     .section { padding: 60px 0; }
     .section-title { margin-bottom: 28px; }
