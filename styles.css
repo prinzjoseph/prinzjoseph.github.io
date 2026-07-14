@@ -212,7 +212,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: var(--nav-h);
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 24px;
