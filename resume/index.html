@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Joseph — Resume</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23080c14'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='13' font-weight='bold' fill='%23ffffff'>{PJ}</text></svg>">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 36px 48px;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #1a1a1a;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #1a1a1a;
+  }
+  .header .title {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #555;
+    margin-top: 1px;
+  }
+  .contact-row {
+    margin-top: 7px;
+    font-size: 11.5px;
+    color: #444;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .contact-row span,
+  .contact-row a {
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .contact-row .sep {
+    margin: 0 10px;
+    color: #bbb;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 15px; }
+  .section-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 1.5px solid #1a1a1a;
+    padding-bottom: 3px;
+    margin-bottom: 9px;
+  }
+
+  /* ── Summary ── */
+  .summary p { color: #2a2a2a; }
+
+  /* ── Skills ── */
+  .skills-table { width: 100%; border-collapse: collapse; }
+  .skills-table tr td { padding: 2.5px 0; vertical-align: top; }
+  .skills-table td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+    width: 138px;
+    color: #1a1a1a;
+    padding-right: 14px;
+  }
+  .skills-table td:last-child { color: #2a2a2a; }
+
+  /* ── Experience ── */
+  .job { margin-bottom: 13px; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: #1a1a1a;
+  }
+  .job-period {
+    font-size: 11.5px;
+    color: #555;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .job-company {
+    font-size: 11.5px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  .job ul {
+    padding-left: 15px;
+    margin: 0;
+  }
+  .job li {
+    margin-bottom: 2.5px;
+    color: #2a2a2a;
+  }
+
+  /* ── Certs & Education ── */
+  .cert-row, .edu-row { margin-bottom: 4px; font-size: 12.5px; }
+  .cert-row .name, .edu-row .name { font-weight: 600; }
+  .cert-row .meta, .edu-row .meta { color: #555; }
+  .cert-row a { color: #1a1a1a; }
+
+  /* ── Print ── */
+  @media print {
+    body { padding: 0; max-width: 100%; }
+    @page { margin: 18mm 18mm 18mm 18mm; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Prince Joseph</h1>
+  <div class="title">Platform &amp; DevOps Engineer</div>
+  <div class="contact-row">
+    <span>Trivandrum, India</span>
+    <span class="sep">·</span>
+    <span>+91 7012962716</span>
+    <span class="sep">·</span>
+    <a href="mailto:princejoseph1k94@gmail.com">princejoseph1k94@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/princejoseph94">linkedin.com/in/princejoseph94</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/prinzjoseph">github.com/prinzjoseph</a>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="section summary">
+  <div class="section-title">Professional Summary</div>
+  <p>Platform &amp; DevOps Engineer with 7.5 years of enterprise Linux operations and 3.5 years running
+  production Kubernetes clusters at scale. At Allianz Technology, operates and improves a Jenkins-based
+  CI/CD platform serving 30+ services across multi-region EKS clusters for 7+ global business entities.
+  Strong foundation in cloud infrastructure (AWS), container orchestration, and CI/CD pipeline operations.
+  Currently building expertise in platform engineering practices — GitOps, IaC from scratch, and
+  self-service delivery tooling.</p>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <div class="section-title">Technical Skills</div>
+  <table class="skills-table">
+    <tr>
+      <td>CI/CD</td>
+      <td>Jenkins (Groovy shared libraries, Job DSL, declarative pipelines), GitHub Actions</td>
+    </tr>
+    <tr>
+      <td>Containers &amp; K8s</td>
+      <td>Kubernetes (EKS), Helm, Docker</td>
+    </tr>
+    <tr>
+      <td>Cloud</td>
+      <td>AWS (EKS, EC2, S3, RDS, Secrets Manager, CodeArtifact, IAM, CloudWatch), Azure</td>
+    </tr>
+    <tr>
+      <td>IaC</td>
+      <td>Terraform, AWS CDK (TypeScript)</td>
+    </tr>
+    <tr>
+      <td>Observability</td>
+      <td>Dynatrace, CloudWatch, Prometheus, Grafana</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Wiz, container image vulnerability scanning, AWS Secrets Manager, External Secrets Operator</td>
+    </tr>
+    <tr>
+      <td>Languages</td>
+      <td>Bash, Python, Groovy, TypeScript, Java (Spring Boot)</td>
+    </tr>
+    <tr>
+      <td>Operating Systems</td>
+      <td>Linux — RHEL 8/9, Ubuntu, CentOS</td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>Git, Maven, Gradle, Nexus, ServiceNow, Ansible</td>
+    </tr>
+  </table>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-title">Work Experience</div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Systems Specialist (DevOps)</span>
+      <span class="job-period">Jan 2026 – Present</span>
+    </div>
+    <div class="job-company">Allianz Technology &nbsp;·&nbsp; Trivandrum, India</div>
+    <ul>
+      <li>Lead continuous improvement of the enterprise Jenkins-based CI/CD platform — coordinating shared library enhancements, pipeline upgrades, and integration of new deployment patterns across multiple teams.</li>
+      <li>Drive standardisation of build and release processes across global entities, ensuring consistent pipeline behaviour across dev, preprod, and production environments.</li>
+      <li>Mentor team members on pipeline best practices and authored internal documentation covering deployment procedures, secrets integration, and onboarding guides.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Senior Analyst – Application Operations (DevOps)</span>
+      <span class="job-period">Aug 2022 – Dec 2025</span>
+    </div>
+    <div class="job-company">Allianz Technology &nbsp;·&nbsp; Trivandrum, India</div>
+    <ul>
+      <li>Operated and maintained multi-region EKS clusters across dev, preprod, prod, hotfix, and DR environments for 7+ global business entities.</li>
+      <li>Maintained and extended a Jenkins Groovy shared library powering CI/CD deployments for 30+ services — adding new stages and debugging pipeline failures across teams.</li>
+      <li>Implemented a three-repo configuration architecture (global mappings → Helm solution templates → per-entity overrides) enabling consistent multi-tenant deployments at scale.</li>
+      <li>Developed an AWS CDK TypeScript module for RDS provisioning and maintained Terraform configurations for EKS and supporting AWS infrastructure.</li>
+      <li>Integrated secrets management using AWS Secrets Manager with External Secrets Operator syncing secrets into Kubernetes across environments.</li>
+      <li>Set up Dynatrace observability for production environments — EKS OneAgent deployment, RDS monitoring, and alert routing to ServiceNow and xMatters.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Systems Engineer</span>
+      <span class="job-period">Jun 2021 – Aug 2022</span>
+    </div>
+    <div class="job-company">Armia Systems Pvt. Ltd. &nbsp;·&nbsp; Kochi, India</div>
+    <ul>
+      <li>Managed reliability of Linux and cloud systems to ensure service continuity across customer-facing workloads.</li>
+      <li>Handled incident triage, escalation, and remediation for infrastructure and deployment failures.</li>
+      <li>Provisioned and maintained AWS compute, storage, networking, and database services.</li>
+      <li>Improved observability through dashboard and alert hygiene; documented runbooks for faster resolution.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Linux System Administrator</span>
+      <span class="job-period">Oct 2018 – May 2021</span>
+    </div>
+    <div class="job-company">Spotfixcrew Pvt. Ltd. &nbsp;·&nbsp; Cherthala, India</div>
+    <ul>
+      <li>Deployed and maintained PHP, Node.js, Python, and Java applications on AWS (EC2, RDS, S3).</li>
+      <li>Built and managed Linux servers — access control, package management, and service health monitoring.</li>
+      <li>Introduced Docker containerisation for selected workloads to improve deployment consistency.</li>
+      <li>Automated repetitive administration tasks using Bash scripts; monitored with Monit and UptimeRobot.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section">
+  <div class="section-title">Certifications</div>
+  <div class="cert-row">
+    <span class="name">AWS Certified Solutions Architect – Associate</span>
+    <span class="meta"> &nbsp;·&nbsp; Amazon Web Services &nbsp;·&nbsp; Issued Feb 2024 &nbsp;·&nbsp; Expires Feb 2027 &nbsp;·&nbsp;
+    <a href="https://www.credly.com/badges/d55cafa7-7246-4877-b353-6ea0c3efc1d6/" target="_blank">Verify on Credly ↗</a></span>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+  <div class="section-title">Education</div>
+  <div class="edu-row">
+    <span class="name">B.Tech, Electronics and Communication Engineering</span>
+    <span class="meta"> &nbsp;·&nbsp; College of Engineering, Cherthala &nbsp;·&nbsp; 2011 – 2015</span>
+  </div>
+  <div class="edu-row">
+    <span class="name">Plus Two, Computer Science</span>
+    <span class="meta"> &nbsp;·&nbsp; Holy Family HSS, Cherthala &nbsp;·&nbsp; 2009 – 2011</span>
+  </div>
+</div>
+
+</body>
+</html>
