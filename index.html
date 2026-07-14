@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince Joseph | DevOps Engineer</title>
+    <title>Prince Joseph — Platform Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23080c14'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='13' font-weight='bold' fill='%23ffffff'>{PJ}</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -20,379 +22,438 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#certifications">Certs</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="resume/" target="_blank" class="nav-resume-btn">Resume</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="hero-bg-animation">
-            <div class="floating-shapes">
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-            </div>
-        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Prince Joseph</h1>
+                <p class="hero-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Available for opportunities
+                </p>
+                <h1 class="hero-name">Prince<br>Joseph</h1>
                 <div class="hero-typewriter">
                     <span class="typewriter-prefix">$ </span>
                     <span class="typewriter-text" id="typewriter"></span>
-                    <span class="typewriter-cursor">|</span>
+                    <span class="typewriter-cursor">▋</span>
                 </div>
                 <p class="hero-description">
-                    DevOps Engineer at <strong>Allianz Technology</strong> with expertise in cloud infrastructure, 
-                    CI/CD pipelines, container orchestration, and infrastructure as code.
+                    Platform &amp; DevOps Engineer at <strong>Allianz Technology</strong>.
+                    7.5 years operating enterprise Linux and Kubernetes — now building the platform layer on top of that foundation.
                 </p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i> View Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                    <a href="resume/" target="_blank" class="btn btn-resume">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </a>
                 </div>
                 <div class="hero-social">
                     <a href="https://github.com/prinzjoseph" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/princejoseph94" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/princejoseph94" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="mailto:princejoseph1k94@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://avatars.githubusercontent.com/u/16304603?v=4" alt="Prince Joseph" loading="eager">
-                    <div class="image-border"></div>
+            <div class="hero-terminal-wrap">
+                <div class="terminal-window" id="heroTerminal">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="tc tc-close"></span>
+                            <span class="tc tc-min"></span>
+                            <span class="tc tc-max"></span>
+                        </div>
+                        <span class="terminal-title">prince@eks-cluster:~ — zsh</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody"></div>
                 </div>
-                <div class="status-badge">
-                    <span class="status-dot"></span> Available for opportunities
-                </div>
+                <div class="terminal-ambient"></div>
             </div>
         </div>
         <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-            <i class="fas fa-chevron-down"></i>
+            <span class="scroll-bar"></span>
         </a>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section class="section about" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <p class="section-label">// 01 — about</p>
+            <h2 class="section-title">Who I Am</h2>
             <div class="about-grid">
                 <div class="about-text">
+                    <div class="about-photo-wrap">
+                        <img src="https://avatars.githubusercontent.com/u/16304603?v=4" alt="Prince Joseph" class="about-photo">
+                        <div class="about-photo-ring"></div>
+                    </div>
                     <p>
-                        I'm a passionate <strong>DevOps Engineer</strong> based in <strong>Kerala, India</strong>, 
-                        currently working at <strong>Allianz Technology</strong>. I specialize in building and 
-                        maintaining robust cloud infrastructure, automating deployment pipelines, and ensuring 
-                        high availability of production systems.
+                        I'm a <strong>Platform &amp; DevOps Engineer</strong> based in <strong>Kerala, India</strong>,
+                        working at <strong>Allianz Technology</strong> on an enterprise-scale
+                        multi-entity, multi-region deployment platform serving business units
+                        across Europe and Asia-Pacific.
                     </p>
                     <p>
-                        With hands-on experience across the full DevOps toolchain — from infrastructure provisioning 
-                        with Terraform and AWS CDK, to containerization with Docker and Kubernetes, to CI/CD with 
-                        Jenkins and GitHub Actions — I help teams ship faster and more reliably.
+                        My background is 7.5 years of operating enterprise Linux systems and
+                        3.5 years running production Kubernetes clusters at scale — multi-region EKS,
+                        multi-entity deployments, and CI/CD pipelines serving 30+ services.
+                        I know what breaks in production and why.
                     </p>
                     <p>
-                        I believe in infrastructure as code, automation-first thinking, and continuous improvement. 
-                        When I'm not automating things, you'll find me exploring new cloud-native technologies.
+                        I'm now focused on the platform engineering layer: GitOps, IaC, self-service
+                        delivery tooling, and observability — building systems that let teams
+                        deploy and operate independently.
                     </p>
                 </div>
                 <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Cloud Native</h3>
-                        <p>AWS infrastructure design & management</p>
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon"><i class="fas fa-server"></i></div>
+                        <div class="stat-num">7.5</div>
+                        <h3>Years in Linux Ops</h3>
+                        <p>Enterprise Linux and cloud infrastructure at scale</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
-                        <h3>CI/CD</h3>
-                        <p>Automated pipelines & deployments</p>
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="stat-num">3.5</div>
+                        <h3>Years in Kubernetes</h3>
+                        <p>Production EKS across 7 global business entities</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-cubes"></i></div>
-                        <h3>Containers</h3>
-                        <p>Docker & Kubernetes orchestration</p>
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                        <div class="stat-num">7</div>
+                        <h3>Business Entities</h3>
+                        <p>Multi-region, multi-entity enterprise deployments</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Reliability</h3>
-                        <p>Monitoring, alerting & incident response</p>
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="stat-num">1</div>
+                        <h3>Certification</h3>
+                        <p>AWS Solutions Architect Associate (2024)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Certifications -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <p class="section-label">// 02 — credentials</p>
+            <h2 class="section-title">Certifications</h2>
+            <div class="certs-scroll">
+                <div class="certs-track">
+                    <a class="cert-card fade-in" href="https://www.credly.com/badges/d55cafa7-7246-4877-b353-6ea0c3efc1d6/" target="_blank" rel="noopener" style="text-decoration:none;cursor:pointer;" title="Verify on Credly">
+                        <div class="cert-emblem cert-saa">
+                            <div class="cert-inner"><span class="cert-abbr">SAA</span></div>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-name">AWS Solutions Architect Associate</span>
+                            <span class="cert-issuer">Amazon Web Services</span>
+                            <span class="cert-year">2024 — expires 2027 · Verify ↗</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
     <section class="section skills" id="skills">
         <div class="container">
+            <p class="section-label">// 03 — stack</p>
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="orange">
                     <div class="skill-category-header">
-                        <i class="fas fa-cloud"></i>
+                        <div class="skill-icon"><i class="fas fa-cloud"></i></div>
                         <h3>Cloud Platform</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">EC2</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">EKS</span>
-                        <span class="skill-tag">CloudWatch</span>
-                        <span class="skill-tag">IAM</span>
-                        <span class="skill-tag">CDK</span>
+                        <span>AWS</span><span>EC2</span><span>S3</span><span>EKS</span>
+                        <span>IAM</span><span>CDK</span><span>Secrets Manager</span><span>CloudWatch</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="purple">
                     <div class="skill-category-header">
-                        <i class="fab fa-linux"></i>
-                        <h3>Operating Systems</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">RedHat Linux 8.x/9.x</span>
-                        <span class="skill-tag">Ubuntu 24.04</span>
-                        <span class="skill-tag">CentOS 8.x/9.x</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fas fa-terminal"></i>
-                        <h3>Scripting Languages</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Groovy</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fas fa-layer-group"></i>
+                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
                         <h3>Infrastructure as Code</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">AWS CDK (TypeScript)</span>
-                        <span class="skill-tag">cdk8s</span>
+                        <span>Terraform</span><span>Remote State</span><span>AWS CDK (TypeScript)</span><span>cdk8s</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="cyan">
                     <div class="skill-category-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Configuration Management</h3>
+                        <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>CI / CD</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Ansible</span>
+                        <span>Jenkins</span><span>Groovy Shared Library</span><span>GitHub Actions</span>
+                        <span>Reusable Workflows</span><span>ArgoCD</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="blue">
                     <div class="skill-category-header">
-                        <i class="fas fa-rocket"></i>
-                        <h3>CI/CD</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fab fa-docker"></i>
-                        <h3>Containerization</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Dockerfile</span>
-                        <span class="skill-tag">Docker Compose</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fas fa-dharmachakra"></i>
+                        <div class="skill-icon"><i class="fas fa-dharmachakra"></i></div>
                         <h3>Container Orchestration</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">EKS</span>
-                        <span class="skill-tag">Helm</span>
-                        <span class="skill-tag">ArgoCD</span>
+                        <span>Kubernetes</span><span>EKS</span><span>Helm</span>
+                        <span>ArgoCD</span><span>Kustomize</span><span>Istio</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="red">
                     <div class="skill-category-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Monitoring & Observability</h3>
+                        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>DevSecOps</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">AWS CloudWatch</span>
-                        <span class="skill-tag">Dynatrace</span>
+                        <span>Wiz</span><span>Trivy</span><span>Snyk</span><span>SonarQube</span>
+                        <span>OPA / Conftest</span><span>Prisma Cloud</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in" data-color="amber">
                     <div class="skill-category-header">
-                        <i class="fab fa-git-alt"></i>
+                        <div class="skill-icon"><i class="fas fa-key"></i></div>
+                        <h3>Secrets Management</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>AWS Secrets Manager</span><span>External Secrets Operator</span>
+                        <span>KeePass</span><span>IRSA</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="green">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Observability</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>OpenTelemetry</span><span>Grafana</span><span>Prometheus</span>
+                        <span>Loki</span><span>Tempo</span><span>Dynatrace</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="indigo">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Scripting Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Bash</span><span>Python</span><span>TypeScript</span>
+                        <span>Groovy</span><span>Go (basics)</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="sky">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                        <h3>Containerization</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Docker</span><span>Dockerfile</span><span>Docker Compose</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="slate">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fab fa-linux"></i></div>
+                        <h3>Operating Systems</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>RHEL 8 / 9</span><span>Ubuntu 24.04</span><span>CentOS</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="pink">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
                         <h3>Version Control</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
+                        <span>Git</span><span>GitHub</span><span>GitOps</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in" data-color="teal">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Configuration Mgmt</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Ansible</span><span>Playbooks</span><span>Jinja2</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section class="section experience" id="experience">
         <div class="container">
+            <p class="section-label">// 04 — history</p>
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-aside">
+                        <span class="timeline-year">2022</span>
+                        <span class="timeline-dot-line"></span>
+                    </div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>DevOps Engineer</h3>
-                            <span class="timeline-company">Allianz Technology</span>
+                        <div class="timeline-top">
+                            <div>
+                                <h3 class="timeline-role">Systems Specialist (DevOps)</h3>
+                                <span class="timeline-company">Allianz Technology</span>
+                            </div>
+                            <span class="timeline-badge">Present</span>
                         </div>
-                        <span class="timeline-date">Present</span>
+                        <span class="timeline-period">Aug 2022 — Present &nbsp;·&nbsp; Trivandrum, India</span>
                         <ul class="timeline-details">
-                            <li>Design and manage cloud infrastructure on AWS for enterprise-grade applications</li>
-                            <li>Build and maintain CI/CD pipelines using Jenkins and GitHub Actions</li>
-                            <li>Containerize applications with Docker and orchestrate with Kubernetes (EKS)</li>
-                            <li>Implement Infrastructure as Code using Terraform and AWS CDK (TypeScript)</li>
-                            <li>Automate configuration management with Ansible</li>
-                            <li>Set up monitoring and alerting using AWS CloudWatch and Dynatrace</li>
-                            <li>Manage Linux servers (RHEL, Ubuntu, CentOS) in production environments</li>
+                            <li>Operated and maintained <strong>multi-region EKS clusters</strong> across dev, preprod, prod, hotfix, and DR environments for 7+ global business entities</li>
+                            <li>Maintained and extended a <strong>Jenkins Groovy shared library</strong> powering CI/CD deployments for 30+ services — adding new stages and debugging pipeline failures across teams</li>
+                            <li>Implemented a <strong>three-repo configuration architecture</strong> (global mappings → Helm solution templates → per-entity overrides) enabling consistent multi-tenant deployments at scale</li>
+                            <li>Developed an <strong>AWS CDK TypeScript module</strong> for RDS provisioning and maintained Terraform configurations for EKS and supporting AWS services</li>
+                            <li>Integrated <strong>secrets management</strong> using AWS Secrets Manager with External Secrets Operator syncing secrets into Kubernetes across environments</li>
+                            <li>Set up <strong>Dynatrace observability</strong> for production environments — EKS OneAgent deployment, RDS monitoring, alert routing to ServiceNow and xMatters</li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span>AWS</span><span>Kubernetes</span><span>EKS</span><span>Jenkins</span>
+                            <span>Terraform</span><span>CDK</span><span>Helm</span><span>Dynatrace</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-aside">
+                        <span class="timeline-year">2021</span>
+                        <span class="timeline-dot-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <div>
+                                <h3 class="timeline-role">Systems Engineer</h3>
+                                <span class="timeline-company">Armia Systems Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <span class="timeline-period">Jun 2021 — Aug 2022 &nbsp;·&nbsp; Kochi, India</span>
+                        <ul class="timeline-details">
+                            <li>Managed reliability of Linux and cloud systems ensuring service continuity across customer-facing workloads</li>
+                            <li>Handled incident triage, escalation, and remediation for infrastructure and deployment failures</li>
+                            <li>Provisioned and maintained AWS compute, storage, networking, and database services</li>
+                            <li>Improved observability through dashboard and alert hygiene; documented runbooks for faster resolution</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Linux</span><span>AWS</span><span>Incident Response</span><span>Bash</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-aside">
+                        <span class="timeline-year">2018</span>
+                        <span class="timeline-dot-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <div>
+                                <h3 class="timeline-role">Linux System Administrator</h3>
+                                <span class="timeline-company">Spotfixcrew Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <span class="timeline-period">Oct 2018 — May 2021 &nbsp;·&nbsp; Cherthala, India</span>
+                        <ul class="timeline-details">
+                            <li>Deployed and maintained PHP, Node.js, Python, and Java applications on AWS (EC2, RDS, S3)</li>
+                            <li>Built and managed Linux servers — access control, package management, process and service health</li>
+                            <li>Introduced Docker containerisation for selected workloads to improve deployment consistency</li>
+                            <li>Automated repetitive administration tasks using Bash scripts; monitored with Monit and UptimeRobot</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Linux</span><span>AWS</span><span>Docker</span><span>Bash</span><span>Ansible</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section class="section projects" id="projects">
         <div class="container">
+            <p class="section-label">// 05 — work</p>
             <h2 class="section-title">Projects</h2>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:2rem;">Projects from my platform engineering roadmap will be added here as I complete them. Currently only showing real, existing work.</p>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fab fa-wordpress"></i></div>
-                    <h3>WordPress Ansible</h3>
-                    <p>Automated WordPress installation and configuration using Ansible playbooks for consistent, repeatable deployments.</p>
-                    <div class="project-tags">
-                        <span>Ansible</span>
-                        <span>Jinja</span>
-                        <span>WordPress</span>
+
+                <div class="project-card fade-in">
+                    <span class="project-num">01</span>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>wordpress-ansible</h3>
+                            <a href="https://github.com/prinzjoseph/wordpress-ansible" target="_blank" rel="noopener" class="project-gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p>Automated WordPress installation and configuration using Ansible playbooks for consistent, repeatable deployments across multiple server environments.</p>
+                        <div class="project-tags"><span>Ansible</span><span>Jinja2</span><span>WordPress</span></div>
                     </div>
-                    <a href="https://github.com/prinzjoseph/wordpress-ansible" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-database"></i></div>
-                    <h3>Azure PSQL Backup to Blob</h3>
-                    <p>Shell script to automate PostgreSQL database backups and upload them to Azure Blob Storage for disaster recovery.</p>
-                    <div class="project-tags">
-                        <span>Shell</span>
-                        <span>Azure</span>
-                        <span>PostgreSQL</span>
+
+                <div class="project-card fade-in">
+                    <span class="project-num">02</span>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>terraform-ec2</h3>
+                            <a href="https://github.com/prinzjoseph/terraform-ec2" target="_blank" rel="noopener" class="project-gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p>Terraform configuration for provisioning EC2 instances on AWS — learning Terraform from scratch as part of the IaC track.</p>
+                        <div class="project-tags"><span>Terraform</span><span>AWS</span><span>EC2</span></div>
                     </div>
-                    <a href="https://github.com/prinzjoseph/upload_azure_psql_backup_to_blob" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>CSF IP Deny Script</h3>
-                    <p>Linux shell script to bulk-deny IP addresses in CSF (ConfigServer Security & Firewall) for enhanced server security.</p>
-                    <div class="project-tags">
-                        <span>Shell</span>
-                        <span>Linux</span>
-                        <span>Security</span>
+
+                <div class="project-card fade-in">
+                    <span class="project-num">03</span>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>docker-playbook</h3>
+                            <a href="https://github.com/prinzjoseph/docker-playbook" target="_blank" rel="noopener" class="project-gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p>Ansible playbook to install and configure Docker on a remote Ubuntu host — reproducible, idempotent setup for containerised environments.</p>
+                        <div class="project-tags"><span>Ansible</span><span>Docker</span><span>Ubuntu</span></div>
                     </div>
-                    <a href="https://github.com/prinzjoseph/deny-ip-in-csf" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-archive"></i></div>
-                    <h3>Website Backup & Restore</h3>
-                    <p>Comprehensive backup and restore script for website files and databases with automated scheduling support.</p>
-                    <div class="project-tags">
-                        <span>Shell</span>
-                        <span>Backup</span>
-                        <span>Automation</span>
-                    </div>
-                    <a href="https://github.com/prinzjoseph/Website_Backup_and_restore_script" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fab fa-docker"></i></div>
-                    <h3>Dockerfiles</h3>
-                    <p>Collection of optimized Dockerfiles for various application stacks and development environments.</p>
-                    <div class="project-tags">
-                        <span>Docker</span>
-                        <span>Containers</span>
-                    </div>
-                    <a href="https://github.com/prinzjoseph/dockerfiles" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fab fa-node-js"></i></div>
-                    <h3>Node React App</h3>
-                    <p>Full-stack application built with Node.js backend and React frontend, demonstrating modern web development practices.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Node.js</span>
-                        <span>React</span>
-                    </div>
-                    <a href="https://github.com/prinzjoseph/node-react" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i> View Source
-                    </a>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="section contact" id="contact">
         <div class="container">
+            <p class="section-label">// 06 — connect</p>
             <h2 class="section-title">Get In Touch</h2>
             <p class="contact-intro">
-                I'm always open to discussing new opportunities, interesting projects, or just having a chat 
-                about DevOps and cloud technologies. Feel free to reach out!
+                Open to discussing DevOps consulting, platform engineering roles,
+                or interesting problems in cloud-native infrastructure. Drop me a line.
             </p>
             <div class="contact-grid">
-                <a href="mailto:princejoseph1k94@gmail.com" class="contact-card">
+                <a href="mailto:princejoseph1k94@gmail.com" class="contact-card fade-in">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <h3>Email</h3>
                     <p>princejoseph1k94@gmail.com</p>
                 </a>
-                <a href="https://www.linkedin.com/in/princejoseph94" target="_blank" rel="noopener" class="contact-card">
+                <a href="https://www.linkedin.com/in/princejoseph94" target="_blank" rel="noopener" class="contact-card fade-in">
                     <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
                     <h3>LinkedIn</h3>
                     <p>princejoseph94</p>
                 </a>
-                <a href="https://github.com/prinzjoseph" target="_blank" rel="noopener" class="contact-card">
+                <a href="https://github.com/prinzjoseph" target="_blank" rel="noopener" class="contact-card fade-in">
                     <div class="contact-icon"><i class="fab fa-github"></i></div>
                     <h3>GitHub</h3>
                     <p>prinzjoseph</p>
-                </a>
-                <a href="https://www.instagram.com/princejoseph94" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-                    <h3>Instagram</h3>
-                    <p>princejoseph94</p>
                 </a>
             </div>
         </div>
@@ -402,11 +463,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-logo">
-                    <span class="logo-bracket">{</span> Prince Joseph <span class="logo-bracket">}</span>
-                </p>
-                <p class="footer-text">Designed & Built by Prince Joseph</p>
-                <p class="footer-copyright">&copy; 2026 All rights reserved.</p>
+                <p class="footer-logo"><span class="logo-bracket">{</span> Prince Joseph <span class="logo-bracket">}</span></p>
+                <p class="footer-role">Platform &amp; DevOps Engineer · Allianz Technology</p>
+                <p class="footer-copy">&copy; 2026 All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -419,24 +478,18 @@
 
     <!-- Theme Picker -->
     <div class="theme-picker" id="themePicker">
-        <div class="theme-picker-title">Daily Themes</div>
+        <div class="theme-picker-title">// daily themes</div>
         <div class="theme-picker-grid">
-            <button class="theme-picker-btn" data-theme="sunday" style="background: linear-gradient(135deg, #6366f1, #06b6d4);" title="Sunday"><span>S</span></button>
-            <button class="theme-picker-btn" data-theme="monday" style="background: linear-gradient(135deg, #10b981, #14b8a6);" title="Monday"><span>M</span></button>
-            <button class="theme-picker-btn" data-theme="tuesday" style="background: linear-gradient(135deg, #f43f5e, #ec4899);" title="Tuesday"><span>T</span></button>
-            <button class="theme-picker-btn" data-theme="wednesday" style="background: linear-gradient(135deg, #f59e0b, #f97316);" title="Wednesday"><span>W</span></button>
-            <button class="theme-picker-btn" data-theme="thursday" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);" title="Thursday"><span>T</span></button>
-            <button class="theme-picker-btn" data-theme="friday" style="background: linear-gradient(135deg, #0ea5e9, #3b82f6);" title="Friday"><span>F</span></button>
-            <button class="theme-picker-btn" data-theme="saturday" style="background: linear-gradient(135deg, #64748b, #78716c);" title="Saturday"><span>S</span></button>
+            <button class="theme-picker-btn" data-theme="sunday"    style="background:linear-gradient(135deg,#6366f1,#06b6d4)"  title="Sunday"><span>S</span></button>
+            <button class="theme-picker-btn" data-theme="monday"    style="background:linear-gradient(135deg,#10b981,#14b8a6)"  title="Monday"><span>M</span></button>
+            <button class="theme-picker-btn" data-theme="tuesday"   style="background:linear-gradient(135deg,#f43f5e,#ec4899)"  title="Tuesday"><span>T</span></button>
+            <button class="theme-picker-btn" data-theme="wednesday" style="background:linear-gradient(135deg,#f59e0b,#f97316)"  title="Wednesday"><span>W</span></button>
+            <button class="theme-picker-btn" data-theme="thursday"  style="background:linear-gradient(135deg,#8b5cf6,#a855f7)"  title="Thursday"><span>T</span></button>
+            <button class="theme-picker-btn" data-theme="friday"    style="background:linear-gradient(135deg,#0ea5e9,#3b82f6)"  title="Friday"><span>F</span></button>
+            <button class="theme-picker-btn" data-theme="saturday"  style="background:linear-gradient(135deg,#64748b,#78716c)"  title="Saturday"><span>S</span></button>
         </div>
         <div class="theme-picker-days">
-            <span class="theme-picker-day">Sun</span>
-            <span class="theme-picker-day">Mon</span>
-            <span class="theme-picker-day">Tue</span>
-            <span class="theme-picker-day">Wed</span>
-            <span class="theme-picker-day">Thu</span>
-            <span class="theme-picker-day">Fri</span>
-            <span class="theme-picker-day">Sat</span>
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
         </div>
         <p class="theme-picker-note">Auto-changes daily. Click to preview.</p>
     </div>
