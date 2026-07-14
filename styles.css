@@ -29,6 +29,10 @@
     --shadow:        0 4px 24px rgba(0,0,0,0.4);
     --shadow-lg:     0 12px 48px rgba(0,0,0,0.6);
     --nav-h:         68px;
+    --safe-top:      env(safe-area-inset-top, 0px);
+    --safe-bottom:   env(safe-area-inset-bottom, 0px);
+    --safe-left:     env(safe-area-inset-left, 0px);
+    --safe-right:    env(safe-area-inset-right, 0px);
 }
 
 /* Sunday — Indigo/Cyan */
@@ -93,7 +97,11 @@
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+}
 
 body {
     background-color: var(--bg);
@@ -101,6 +109,7 @@ body {
     font-family: var(--font-display);
     line-height: 1.6;
     overflow-x: hidden;
+    min-width: 0;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -183,7 +192,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: var(--nav-h);
+    height: calc(var(--nav-h) + var(--safe-top));
+    padding-top: var(--safe-top);
+    background: rgba(8,12,20,0.92);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     z-index: 1000;
     transition: background 0.3s, border-color 0.3s;
     border-bottom: 1px solid transparent;
@@ -205,6 +218,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     padding: 0 24px;
     position: relative;
     z-index: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .nav-logo {
@@ -270,9 +286,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ============================================================ */
 .hero {
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
-    padding-top: var(--nav-h);
+    padding-top: calc(var(--nav-h) + var(--safe-top));
     position: relative;
     overflow: hidden;
 }
@@ -1181,7 +1198,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ============================================================ */
 .theme-indicator {
     position: fixed;
-    bottom: 24px; left: 24px;
+    bottom: calc(24px + var(--safe-bottom)); left: calc(24px + var(--safe-left));
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1215,7 +1232,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .theme-picker {
     position: fixed;
-    bottom: 70px; left: 24px;
+    bottom: calc(70px + var(--safe-bottom)); left: calc(24px + var(--safe-left));
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -1290,16 +1307,16 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: var(--nav-h);
+        top: calc(var(--nav-h) + var(--safe-top));
         left: 0; right: 0;
         background: rgba(8,12,20,0.97);
         backdrop-filter: blur(18px);
         border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: flex-start;
-        padding: 16px 24px 24px;
+        padding: 16px 24px calc(24px + var(--safe-bottom));
         gap: 2px;
-        max-height: calc(100vh - var(--nav-h));
+        max-height: calc(100dvh - var(--nav-h) - var(--safe-top));
         overflow-y: auto;
         transform: translateY(-110%);
         transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
@@ -1327,6 +1344,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ── Mobile portrait ── */
 @media (max-width: 540px) {
+    .nav-container { padding: 0 16px; }
+    .nav-toggle { padding: 10px 6px; gap: 6px; }
+    .nav-toggle span { width: 24px; }
+
     .hero-name { font-size: clamp(2.6rem, 11vw, 3.2rem); }
     .hero-description { font-size: 0.9rem; }
     .hero-cta { flex-direction: column; gap: 10px; }
